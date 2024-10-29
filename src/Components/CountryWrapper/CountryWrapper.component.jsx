@@ -23,7 +23,11 @@ const CountryWrapper = () => {
     getCountryData();
   }, []);
 
-  return <div>counry wrapper</div>;
+  return (
+    <>
+      <CountryDisplayer countryData={countryData} />
+    </>
+  );
 };
 
 export default CountryWrapper;
