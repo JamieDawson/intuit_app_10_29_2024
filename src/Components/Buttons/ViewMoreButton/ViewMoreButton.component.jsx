@@ -5,3 +5,5 @@ const ViewMoreButton = ({ viewMore, setViewMore }) => {
 };
 
 export default ViewMoreButton;
+
+//viewMore={viewMore} setViewMore={setViewMore}
