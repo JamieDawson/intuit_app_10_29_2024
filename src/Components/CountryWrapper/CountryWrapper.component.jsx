@@ -3,6 +3,7 @@ import CountryDisplayer from "../CountryDisplayer/CountryDisplayer.component";
 
 const CountryWrapper = () => {
   const [countryData, setCountryData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const getCountryData = async () => {
@@ -23,9 +24,18 @@ const CountryWrapper = () => {
     getCountryData();
   }, []);
 
+  const filteredCountryData = countryData.filter((country) =>
+    country.name.common.toLowerCase().includes(searchTerm.toLowerCase().trim())
+  );
+
   return (
     <>
-      <CountryDisplayer countryData={countryData} />
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <CountryDisplayer countryData={filteredCountryData} />
     </>
   );
 };
