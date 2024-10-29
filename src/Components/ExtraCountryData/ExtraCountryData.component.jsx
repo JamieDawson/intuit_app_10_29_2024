@@ -12,6 +12,13 @@ const ExtraCountryData = ({ country }) => {
         Currencies:{" "}
         {country.currencies && Object.values(country.currencies)[0].name}
       </div>
+      <div>
+        Languages:{" "}
+        {country.languages && Object.values(country.languages).join(", ")}
+      </div>
+      <div>
+        Border Countries: {country.borders && country.borders.join(", ")}
+      </div>
     </div>
   );
 };
